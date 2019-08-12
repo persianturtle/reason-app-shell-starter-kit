@@ -4,7 +4,7 @@ let html = {|
   <p>A simple example to help you get started building your <a href="https://reasonml.github.io/reason-react/">ReasonReact</a> web application. It's purposely kept small and simple to be easy to follow and change as needed.</p>
   <h2>Getting Started</h2>
   <pre><code class="sh language-sh">npm install
-  npm start
+npm start
   </code></pre>
   <p>This will start both <code>bsb</code> and <code>webpack-dev-server</code> (via the cross platform <code>npm-run-all</code>).</p>
   <h2>Demo</h2>
