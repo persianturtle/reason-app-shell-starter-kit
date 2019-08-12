@@ -17,7 +17,7 @@
     "react-dom": "latest",
     "react-transition-group": "latest",
     "reason-react": "latest",
-    "styled-components": "latest"
+    "bs-css": "latest"
   },
   "devDependencies": {
     "bs-platform": "latest",

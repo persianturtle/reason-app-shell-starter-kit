@@ -1,43 +1,21 @@
-%raw
-{| import { createGlobalStyle } from "styled-components" |};
+module Styles = {
+  open Css;
 
-module GlobalStyles = {
-  let styles = [%raw
-    {|
-      createGlobalStyle`
-        body {
-          margin: 0;
-          font-family: Helvetica, Arial, sans-serif;
-        }
+  global(
+    "body",
+    [margin(zero), fontFamily("Helvetica, Arial, sans-serif")],
+  );
 
-        h1, h2, h3 {
-          font-weight: normal;
-        }
+  global("h1, h2, h3", [fontWeight(`normal)]);
 
-        img {
-          display: block;
-          max-width: 100%;
-        }
+  global("img", [display(`block), maxWidth(pct(100.))]);
 
-        a {
-          cursor: pointer;
-        }
-      `
-    |}
-  ];
-
-  [@react.component]
-  let make = () => {
-    React.createElementVariadic(styles, makeProps(), [||]);
-  };
+  global("a", [cursor(`pointer)]);
 };
 
 ReactDOMRe.renderToElementWithId(
-  <>
-    <GlobalStyles />
-    <Router.WithRouter>
-      ...{(~currentRoute) => <App currentRoute />}
-    </Router.WithRouter>
-  </>,
+  <Router.WithRouter>
+    ...{(~currentRoute) => <App currentRoute />}
+  </Router.WithRouter>,
   "root",
 );

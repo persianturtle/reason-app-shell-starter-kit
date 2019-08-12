@@ -5,7 +5,7 @@
 # CSS Flavors
 
 - [styled-components](https://github.com/persianturtle/reason-app-shell-starter-kit)
-- [bs-css]()
+- [bs-css](https://github.com/persianturtle/reason-app-shell-starter-kit/tree/bs-css)
 - [Sass](https://github.com/persianturtle/reason-app-shell-starter-kit/tree/sass)
 
 # Description
@@ -40,7 +40,7 @@ In my journey to Reason, I was searching for an example ReasonReact web app that
 - A navigation drawer that, when open, responds to touch&mdash;so you're free to use swiping gestures in your app
 - Simple, cross platform `bsb` & `webpack` configurations
 - [workbox](https://developers.google.com/web/tools/workbox/) for service worker generation
-- Multiple flavors of CSS depending (currently [styled-components](), [bs-css](), and [Sass]())
+- Multiple flavors of CSS depending (currently [styled-components](https://github.com/persianturtle/reason-app-shell-starter-kit), [bs-css](https://github.com/persianturtle/reason-app-shell-starter-kit/tree/bs-css), and [Sass](https://github.com/persianturtle/reason-app-shell-starter-kit/tree/sass))
 
 ## UI Inspiration
 
