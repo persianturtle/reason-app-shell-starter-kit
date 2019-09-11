@@ -14,8 +14,16 @@ module Styles = {
       after([
         contentRule(""),
         transitions([
-          `transition("opacity 450ms cubic-bezier(0.23, 1, 0.32, 1)"),
-          `transition("transform 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms"),
+          Transition.shorthand(
+            ~duration=450,
+            ~timingFunction=cubicBesier(0.23, 1., 0.32, 1.),
+            "opacity",
+          ),
+          Transition.shorthand(
+            ~duration=0,
+            ~timingFunction=cubicBesier(0.23, 1., 0.32, 1.),
+            "transform",
+          ),
         ]),
         position(fixed),
         top(zero),
@@ -31,7 +39,11 @@ module Styles = {
         "&.overlay",
         [
           after([
-            `transition("opacity 450ms cubic-bezier(0.23, 1, 0.32, 1)"),
+            transition(
+              ~duration=450,
+              ~timingFunction=cubicBesier(0.23, 1., 0.32, 1.),
+              "opacity",
+            ),
             transform(translateX(zero)),
             opacity(1.),
           ]),
@@ -46,9 +58,27 @@ module Styles = {
           backgroundColor(dodgerblue),
           color(white),
           boxShadows([
-            `shadow("0 4px 5px 0 rgba(15, 74, 133, 0.14)"),
-            `shadow("0 2px 9px 1px rgba(15, 74, 133, 0.12)"),
-            `shadow("0 4px 2px -2px rgba(15, 74, 133, 0.2)"),
+            Shadow.box(
+              ~x=px(0),
+              ~y=px(4),
+              ~blur=px(5),
+              ~spread=px(0),
+              rgba(15, 74, 133, 0.14),
+            ),
+            Shadow.box(
+              ~x=px(0),
+              ~y=px(2),
+              ~blur=px(9),
+              ~spread=px(1),
+              rgba(15, 74, 133, 0.12),
+            ),
+            Shadow.box(
+              ~x=px(0),
+              ~y=px(4),
+              ~blur=px(2),
+              ~spread=px(-2),
+              rgba(15, 74, 133, 0.2),
+            ),
           ]),
           selector(
             "> a",
@@ -71,7 +101,11 @@ module Styles = {
       selector(
         "> nav",
         [
-          `transition("transform 450ms cubic-bezier(0.23, 1, 0.32, 1)"),
+          transition(
+            ~duration=450,
+            ~timingFunction=cubicBesier(0.23, 1., 0.32, 1.),
+            "transform",
+          ),
           position(absolute),
           top(zero),
           left(zero),
@@ -79,8 +113,18 @@ module Styles = {
           height(vh(100.)),
           backgroundColor(white),
           boxShadows([
-            `shadow("rgba(0, 0, 0, 0.16) 0px 3px 10px"),
-            `shadow("rgba(0, 0, 0, 0.23) 0px 3px 10px"),
+            Shadow.box(
+              ~x=px(0),
+              ~y=px(3),
+              ~blur=px(10),
+              rgba(0, 0, 0, 0.16),
+            ),
+            Shadow.box(
+              ~x=px(0),
+              ~y=px(3),
+              ~blur=px(10),
+              rgba(0, 0, 0, 0.23),
+            ),
           ]),
           overflow(auto),
           zIndex(2),
@@ -153,8 +197,10 @@ module Styles = {
                   selector(
                     "> a",
                     [
-                      `transition(
-                        "background-color 450ms cubic-bezier(0.23, 1, 0.32, 1)",
+                      transition(
+                        ~duration=450,
+                        ~timingFunction=cubicBesier(0.23, 1., 0.32, 1.),
+                        "background-color",
                       ),
                       fontSize(px(18)),
                       lineHeight(px(54)),
