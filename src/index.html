@@ -1,16 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
     <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
-    <link rel="manifest" href="/manifest.json">
-    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/favicon.ico" />
     <title>React App</title>
+    <style>
+      @keyframes enter {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+      }
+      @keyframes exit {
+        to {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+      }
+      .routeTransition-enter.routeTransition-enter-active {
+        animation: enter 500ms ease 400ms both;
+      }
+      .routeTransition-exit.routeTransition-exit-active {
+        animation: exit 400ms ease both;
+      }
+    </style>
   </head>
   <body>
     <noscript>
@@ -20,8 +43,8 @@
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js');
-        });
+          navigator.serviceWorker.register('/sw.js')
+        })
       }
     </script>
   </body>
